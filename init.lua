@@ -1,12 +1,14 @@
 
 -- global variable
 horror = {
-	sounds = true,
-	weird_stuff = false,
+	sounds = minetest.settings:get_bool("horror.sounds"),
+	weird_stuff = minetest.settings:get_bool("horror.weird_stuff"),
+	override_flint_and_steel = minetest.settings:get_bool("horror.override_flint_and_steel"),
+	place_sam_head_on_death = minetest.settings:get_bool("horror.place_sam_head_on_death"),
 
 	--dark setting
-	dark = true,
-	dark_dark = true,
+	dark = minetest.settings:get_bool("horror.dark"),
+	dark_dark = minetest.settings:get_bool("horror.dark_dark"),
 
 	--new style, set to false for the nodebox candle and candlestick
 	new_style = true
