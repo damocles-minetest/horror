@@ -6,6 +6,8 @@ horror = {
 	override_flint_and_steel = minetest.settings:get_bool("horror.override_flint_and_steel"),
 	place_sam_head_on_death = minetest.settings:get_bool("horror.place_sam_head_on_death"),
 
+	enable_portal = minetest.settings:get_bool("horror.enable_portal"),
+
 	--dark setting
 	dark = minetest.settings:get_bool("horror.dark"),
 	dark_dark = minetest.settings:get_bool("horror.dark_dark"),

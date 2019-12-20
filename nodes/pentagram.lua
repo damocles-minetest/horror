@@ -17,7 +17,7 @@ minetest.register_node("horror:pentagram", {
 		fixed = {-0.5, -0.5, -0.5, 0.5, -0.4, 0.5}
 	},
 	on_rightclick = function(pos, node, _)
-	if minetest.get_modpath("mobs") then
+	if minetest.get_modpath("mobs") and horror.enable_portal then
 		minetest.after(0.5, function()
 		minetest.set_node(pos, {name="horror:portal", param2=node.param2})
 		minetest.add_particlespawner(
