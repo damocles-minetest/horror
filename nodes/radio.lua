@@ -14,8 +14,12 @@ minetest.register_node("horror:radio", {
 	paramtype2 = "facedir",
 	groups = {oddly_breakable_by_hand=1},
 	on_rightclick = function()
-		minetest.sound_play("Undersea_Garden",
-		{gain = 0.5, max_hear_distance = 1, loop = false})
+		if horror.sounds then
+			minetest.sound_play("Undersea_Garden", {
+				gain = 0.5,
+				max_hear_distance = 1, loop = false
+			})
+		end
 	end,
 	node_box = {
 		type = "fixed",
