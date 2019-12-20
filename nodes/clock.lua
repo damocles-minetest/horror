@@ -28,15 +28,22 @@ minetest.register_abm({
 	interval = 1.0,
 	chance = 1,
 	action = function(pos)
-		minetest.sound_play("clock",
-		{gain = 3, max_hear_distance = 1, loop = false})
+		minetest.sound_play("clock", {
+			pos = pos,
+			gain = 3,
+			max_hear_distance = 1,
+			loop = false
+		})
 		local meta = minetest.get_meta(pos)
 		local time1 = minetest.get_timeofday()*24000
 		meta:set_string("infotext", "time:"..time1)
 		if math.random(1,500) == 1 then
-			minetest.sound_play("clock_strikes_twelve",
-				{gain = 1, max_hear_distance = 1, loop = false}
-			)
+			minetest.sound_play("clock_strikes_twelve", {
+				pos = pos,
+				gain = 1,
+				max_hear_distance = 1,
+				loop = false
+			})
 		end
 	end
 })
