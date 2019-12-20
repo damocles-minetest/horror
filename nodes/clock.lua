@@ -33,9 +33,10 @@ minetest.register_abm({
 		local meta = minetest.get_meta(pos)
 		local time1 = minetest.get_timeofday()*24000
 		meta:set_string("infotext", "time:"..time1)
-		if math.random(1,500) then
-		minetest.sound_play("clock_strikes_twelve",
-		{gain = 1, max_hear_distance = 1, loop = false})
+		if math.random(1,500) == 1 then
+			minetest.sound_play("clock_strikes_twelve",
+				{gain = 1, max_hear_distance = 1, loop = false}
+			)
 		end
 	end
 })
