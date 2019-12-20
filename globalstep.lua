@@ -2,7 +2,7 @@
 minetest.register_globalstep(function()
 	if math.random(1,1000) == 1 and horror.sounds then
 		local sound = math.random(1,7)
-		minetest.sound_play(sound,
+		minetest.sound_play("horror_" .. sound,
 		{gain = 0.4, max_hear_distance = 1, loop = false})
 	end
 
